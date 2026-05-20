@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bethal Auto Electrical</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+  --red:#d60000;
+  --bright-red:#ff1a1a;
+  --black:#050505;
+  --dark:#111111;
+  --dark-grey:#1c1c1c;
+  --silver:#d9d9d9;
+  --light-grey:#b5b5b5;
+  --white:#ffffff;
+}
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0d0d0d;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* HEADER */
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(10,10,10,0.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav{
+      width:90%;
+      margin:auto;
+      height:85px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-family:'Orbitron',sans-serif;
+      font-size:1.3rem;
+      font-weight:900;
+      color:var(--red);
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--red);
+    }
+
+    .nav-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn{
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .call-btn{
+      background:var(--red);
+      color:white;
+    }
+
+    .wa-btn{
+      background:#25D366;
+      color:black;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      width:90%;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:60px;
+      padding-top:120px;
+      padding-bottom:80px;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.1;
+      font-family:'Orbitron',sans-serif;
+      margin-bottom:25px;
+    }
+
+    .hero-text span{
+      color:var(--red);
+    }
+
+    .hero-text p{
+      color:var(--grey);
+      line-height:1.8;
+      font-size:1.1rem;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .primary-btn{
+      background:var(--red);
+      color:white;
+      padding:15px 28px;
+      border-radius:12px;
+      font-weight:700;
+    }
+
+    .secondary-btn{
+      border:2px solid var(--red);
+      color:var(--red);
+      padding:15px 28px;
+      border-radius:12px;
+      font-weight:700;
+    }
+
+    /* HERO IMAGE */
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:650px;
+      border-radius:25px;
+      box-shadow:0 0 40px rgba(255,0,0,0.25);
+    }
+
+    /* SECTION */
+
+    section{
+      width:90%;
+      margin:auto;
+      padding:90px 0;
+    }
+
+    .section-title{
+      font-size:2.7rem;
+      margin-bottom:20px;
+      font-family:'Orbitron',sans-serif;
+    }
+
+    .section-title span{
+      color:var(--red);
+    }
+
+    .section-sub{
+      color:#bdbdbd;
+      max-width:700px;
+      line-height:1.8;
+      margin-bottom:40px;
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .service-card{
+      background:var(--card);
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:0.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(255,0,0,0.4);
+    }
+
+    .service-card h3{
+      margin-bottom:15px;
+      color:var(--red);
+    }
+
+    .service-card p{
+      color:#bdbdbd;
+      line-height:1.7;
+    }
+
+    /* PARTS SELL SECTION */
+
+    .parts-section{
+      background:#141414;
+      border-radius:25px;
+      padding:50px;
+      margin-top:50px;
+    }
+
+    .parts-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .parts-box{
+      background:#1c1c1c;
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .parts-box h3{
+      color:var(--red);
+      margin-bottom:15px;
+    }
+
+    .parts-box ul{
+      color:#cfcfcf;
+      line-height:2;
+      padding-left:20px;
+    }
+
+    .parts-btn{
+      display:inline-block;
+      margin-top:20px;
+      background:var(--red);
+      color:white;
+      padding:14px 24px;
+      border-radius:10px;
+      font-weight:700;
+    }
+
+    /* CONTACT */
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .contact-card{
+      background:#171717;
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-card h3{
+      color:var(--red);
+      margin-bottom:15px;
+    }
+
+    .contact-card p{
+      color:#d0d0d0;
+      margin-bottom:10px;
+    }
+
+    .contact-card a{
+      color:white;
+      display:inline-block;
+      margin-top:10px;
+    }
+
+    /* MAP */
+
+    .map-container{
+      margin-top:50px;
+      border-radius:25px;
+      overflow:hidden;
+      border:2px solid rgba(255,0,0,0.3);
+    }
+
+    iframe{
+      width:100%;
+      height:450px;
+      border:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      padding:70px 10%;
+      margin-top:80px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+    }
+
+    footer h3{
+      margin-bottom:20px;
+      color:var(--red);
+    }
+
+    footer p,
+    footer a{
+      color:#bdbdbd;
+      line-height:1.8;
+    }
+
+    .copyright{
+      margin-top:40px;
+      text-align:center;
+      color:#777;
+    }
+
+    /* FLOAT BUTTON */
+
+    .float-wa{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:black;
+      font-size:1.7rem;
+      box-shadow:0 0 20px rgba(37,211,102,0.5);
+      z-index:1000;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:950px){
+
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:2.8rem;
+      }
+
+      .parts-grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .nav{
+        flex-wrap:wrap;
+        height:auto;
+        padding:20px 0;
+        gap:15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      BETHAL AUTO ELECTRICAL
+    </div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#parts">Parts For Sale</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="tel:0798990342" class="btn call-btn">
+        📞 Cornel
+      </a>
+
+      <a href="https://wa.me/27798990342" target="_blank" class="btn wa-btn">
+        WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <h1>
+      PROFESSIONAL<br>
+      <span>AUTO ELECTRICAL</span><br>
+      SERVICES
+    </h1>
+
+    <p>
+      Trusted auto electrical specialists in Bethal.
+      We diagnose faults, repair electrical issues,
+      fit accessories and supply quality parts for all vehicle types.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="https://wa.me/27798990342" target="_blank" class="primary-btn">
+        Book on WhatsApp
+      </a>
+
+      <a href="#contact" class="secondary-btn">
+        Contact Us
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-image">
+    <img src="EFC4BA65-B133-4C58-97C7-BCEDDB3B942F.PNG" alt="Bethal Auto Electrical">
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <h2 class="section-title">
+    Our <span>Services</span>
+  </h2>
+
+  <p class="section-sub">
+    We offer professional diagnostics, repairs and installations
+    for all vehicle electrical systems.
+  </p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Alternators</h3>
+      <p>Alternator testing, repairs and replacements.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Starters</h3>
+      <p>Starter motor diagnostics and repairs.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Fault Finding</h3>
+      <p>Advanced electrical fault diagnostics and solutions.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Rewiring</h3>
+      <p>Complete vehicle rewiring and electrical upgrades.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Alarms & Central Locking</h3>
+      <p>Installations and repairs for alarms and locking systems.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Smash & Grab</h3>
+      <p>Professional window tinting and smash & grab film installation.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PARTS SECTION -->
+
+<section id="parts">
+
+  <h2 class="section-title">
+    Vehicle <span>Parts For Sale</span>
+  </h2>
+
+  <p class="section-sub">
+    Customers can contact us directly to list or sell vehicle parts.
+  </p>
+
+  <div class="parts-section">
+
+    <div class="parts-grid">
+
+      <div class="parts-box">
+
+        <h3>Sell Your Vehicle Parts</h3>
+
+        <p style="color:#cfcfcf; line-height:1.8;">
+          Have spare parts to sell? Send us your:
+        </p>
+
+        <ul>
+          <li>Part name</li>
+          <li>Vehicle model</li>
+          <li>Photos of the part</li>
+          <li>Price</li>
+          <li>Your contact details</li>
+        </ul>
+
+        <a 
+          href="https://wa.me/27798990342?text=Hi%20I%20would%20like%20to%20sell%20vehicle%20parts" 
+          target="_blank"
+          class="parts-btn"
+        >
+          Sell Parts on WhatsApp
+        </a>
+
+      </div>
+
+      <div class="parts-box">
+
+        <h3>Parts We Buy & Sell</h3>
+
+        <ul>
+          <li>Alternators</li>
+          <li>Starter Motors</li>
+          <li>Vehicle Wiring</li>
+          <li>Sensors</li>
+          <li>Lights & Xenons</li>
+          <li>Batteries</li>
+          <li>Electrical Modules</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <h2 class="section-title">
+    Contact <span>Us</span>
+  </h2>
+
+  <p class="section-sub">
+    Contact Bethal Auto Electrical for bookings,
+    diagnostics and auto electrical repairs.
+  </p>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+
+      <h3>Workshop Address</h3>
+
+      <p>
+        42 Gedenk Ave,<br>
+        Bethal, 2310
+      </p>
+
+      <a 
+        href="https://www.google.com/maps/search/?api=1&query=42+Gedenk+Ave+Bethal+2310"
+        target="_blank"
+      >
+        📍 Open in Google Maps
+      </a>
+
+    </div>
+
+    <div class="contact-card">
+
+      <h3>Cornel</h3>
+
+      <p>079 899 0342</p>
+
+      <a href="tel:0798990342">
+        📞 Call Cornel
+      </a><br>
+
+      <a href="https://wa.me/27798990342" target="_blank">
+        💬 WhatsApp Cornel
+      </a>
+
+    </div>
+
+    <div class="contact-card">
+
+      <h3>Johan</h3>
+
+      <p>082 351 3310</p>
+
+      <a href="tel:0823513310">
+        📞 Call Johan
+      </a><br>
+
+      <a href="https://wa.me/27823513310" target="_blank">
+        💬 WhatsApp Johan
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- GOOGLE MAP -->
+
+  <div class="map-container">
+
+    <iframe
+      src="https://maps.google.com/maps?q=42%20Gedenk%20Ave%20Bethal%202310&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+
+      <h3>Bethal Auto Electrical</h3>
+
+      <p>
+        Professional auto electrical diagnostics,
+        repairs and vehicle parts.
+      </p>
+
+    </div>
+
+    <div>
+
+      <h3>Address</h3>
+
+      <p>
+        42 Gedenk Ave<br>
+        Bethal, 2310
+      </p>
+
+    </div>
+
+    <div>
+
+      <h3>Quick Links</h3>
+
+      <a href="#services">Services</a><br>
+      <a href="#parts">Parts For Sale</a><br>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Bethal Auto Electrical. All Rights Reserved.
+  </div>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a 
+  href="https://wa.me/27798990342" 
+  target="_blank"
+  class="float-wa"
+>
+  💬
+</a>
+
+</body>
+</html>
